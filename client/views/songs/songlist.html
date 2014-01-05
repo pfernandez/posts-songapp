@@ -1,0 +1,10 @@
+<template name="songsList">
+  <div class="songs">
+    {{#each songs}}
+      {{> songItem}}
+    {{/each}}
+    {{#if hasMoreSongs}}
+      <a class="load-more" href="{{nextPath}}">Load more</a>
+    {{/if}}
+  </div>
+</template>

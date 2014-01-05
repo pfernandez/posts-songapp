@@ -1,0 +1,29 @@
+<template name="songItem">
+  <div class="song">
+    <div class="song-content">
+      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+      <p>
+        submitted by {{author}},
+        <a href="{{pathFor 'songPage'}}">{{commentsCount}} comments</a>
+        {{#if ownSong}}<a href="{{pathFor 'songEdit'}}">Edit</a>{{/if}}
+      </p>
+    </div>
+    <a href="{{pathFor 'songPage'}}" class="discuss btn">Discuss</a>
+    </div>
+  </div>
+</template>
+
+<!--
+Alternatively, you can also explicitely tell the router where you'd like it to look for the _id property, by passing a second argument to the helper (i.e. {{pathFor 'songPage' someOtherSong}}).
+-->
+
+<!--
+HTML5 pushState
+
+One thing to realise is that these URL changes are happening using HTML5 pushState.
+
+The Router picks up clicks on URLs that are internal to the site, and prevents the browser from browsing away from the app, instead just making the necessary changes to the app's state.
+
+If everything is working correctly the page should change instantaneously. In fact, sometimes things change so fast that some kind of page transition might be needed. This is outside of the scope of this chapter, but an interesting topic nonetheless.
+
+-->

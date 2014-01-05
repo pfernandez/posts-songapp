@@ -1,0 +1,31 @@
+<template name="header">
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="{{pathFor 'songsList'}}">songapp</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          {{#if currentUser}}
+            <li>
+              <a href="{{pathFor 'songSubmit'}}">Submit Post</a>
+            </li>
+            <li class="dropdown">
+              {{> notifications}}
+            </li>
+          {{/if}}
+        </ul>
+        <ul class="nav pull-right">
+          <li>{{loginButtons}}</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+</template>
+
+<!--
+The currentUser helper is provided to us by the accounts package and is the handlebars equivalent of Meteor.user(). Since it's reactive, the link will appear or disappear as you log in and out of the app.
+-->

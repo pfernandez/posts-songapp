@@ -1,0 +1,1 @@
+Replace songsubmit .html & .js with peices of the old songapp code. This will be called within songpage.html, which is equivalent to the previous songapp in its entirety. The function that does the actual datbase insert is Meteor.methods().song() in song.js.
